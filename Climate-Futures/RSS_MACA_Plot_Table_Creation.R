@@ -17,11 +17,11 @@ rm(list=ls())
 
 ################################################## INITIALS ##################################################
 
-SiteID = "ACAD"
+SiteID = "TUMA"
 
 #Directory and RData file where daily data series is stored
-DataDir = "C:/Users/achildress/Documents/RSS/Working/ACAD/MACA"
-DataFile = "ACAD_init_parsed.RData"
+DataDir = "C:/Users/adillon/Documents/RSS/TUMA/MACA"
+DataFile = "TUMA_init_parsed.RData"
 
 #Year range for summarizing future climate (Year - Range/2) to (Year + Range/2)
 Year = 2040 #Central year
