@@ -11,11 +11,11 @@ rm(list=ls())
 #Location of data
 DataDir <- "E:/ClimateData/gridmet/"
 #Location of output files
-OutDir <- "C:/Users/achildress/Documents/RSS/Working/FIIS/Gridmet/"
+OutDir <- "C:/Users/adillon/Documents/RSS/TUMA/Gridmet/"
 
-SiteID = "FIIS" #Park code
-Lat = 40.69182965
-Lon = -72.99435226
+SiteID = "TUMA" #Park code
+Lat = 31.572832
+Lon = -111.047763
 
 setwd(DataDir)
 
@@ -65,7 +65,7 @@ for(var in vars){
 head(GridMet)
 
 ####################  Save as ouptut files ######################
-setwd(OutDir)
+setwd("C:/Users/adillon/Documents/RSS/TUMA/Gridmet")
 write.csv(GridMet,"GridMet.csv",row.names=F)
 
 
