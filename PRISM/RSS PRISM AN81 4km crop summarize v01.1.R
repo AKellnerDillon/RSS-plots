@@ -162,9 +162,9 @@ TmaxMeans$TmaxF <- TmaxMeans$Tmax * 9/5 + 32
       # clean up before writing file
 rm(PptDir, PptYrDir, TminDir, TminYrDir, TmaxDir, TmaxYrDir, NYr)
 
-dir.create(OFDir)
-setwd(OFDir)
-save.image(sprintf("%s_%s_%s_PRISM_PptTminTmax_IntermediateFiles.RData", SiteID, Lat, Lon))
+#dir.create(OFDir)
+#setwd(OFDir)
+save.image(sprintf("%s_%s_%s_PRISM_PptTminTmax_IntermediateFiles.RData", SiteID, Lat, Lon)) # easier to save to project folder than output folder
      
       # reality check. Need print & flush to generate output to screen when full script run
 print(qplot(PptMeans$Date, PptMeans$PptIn, data=PptMeans)); flush.console()
