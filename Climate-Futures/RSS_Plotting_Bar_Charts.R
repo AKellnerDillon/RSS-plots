@@ -24,15 +24,15 @@ library(reshape2)
 library(openxlsx)
 
 rm(list=ls())
-setwd("C:/Users/achildress/Documents/RSS/Completed/ACAD/MACA/Figs MACA/")
-load("ACAD_44.35073_-68.2441_Final_Environment.RData")
+setwd("C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA")
+load("TUMA_31.572832_-111.047763_Final_Environment.RData")
 
 
 ################ INITIALS ##########################33
 
 # Need to check all the subsets
 ### NEED TO CHANGE LINE 72 for ordering scenarios on plots
-FutureSubset <- c("Warm Damp","Hot Wet")          # Select two scenarios from the CFs vector specified in CMIP5_Parsing script. Names must match.
+FutureSubset <- c("Warm Wet","Hot Dry")          # Select two scenarios from the CFs vector specified in CMIP5_Parsing script. Names must match.
 Scenario1<-FutureSubset[1]
 Scenario2<-FutureSubset[2]
 
@@ -336,7 +336,7 @@ ggplot(At, aes(x=CF,y=(eval(parse(text=var))),fill=CF)) +
   geom_bar(stat="identity",position="dodge",colour="black") +
   BarPlotTheme +
   # coord_cartesian(ylim=c(0, 40)) +
-  labs(title = paste(SiteID, " - Days/Yr with Tmin < Historic 5th Percentile (", round(HistTminLow, 1), "°F) in ", Year, sep=""), 
+  labs(title = paste(SiteID, " - Days/Yr with Tmin < Historic 5th Percentile (", round(HistTminLow, 1), "?F) in ", Year, sep=""), 
        y = "Days/Yr", colour = "Climate Future")  +
   scale_fill_manual(name="",values = colors3) +
   coord_cartesian(ylim = c(min(eval(parse(text=paste("At$",var,sep="")))), max(eval(parse(text=paste("At$",var,sep=""))))))
@@ -348,7 +348,7 @@ p<-ggplot(Annual_samp, aes(x=CF, y=(eval(parse(text=var))), colour=CF)) +
   geom_boxplot(colour="black",aes(fill = factor(CF)), outlier.shape=NA)+ 
   geom_jitter(shape = 21, size = 5, aes(fill = factor(CF),colour=factor(me.col)), position=position_jitter(0.2)) +
   BarPlotTheme +
-  labs(title = paste(SiteID, " - Days/Yr with Tmin < Historic 5th Percentile (", round(HistTminLow, 1), "°F) in ", Year, sep=""), 
+  labs(title = paste(SiteID, " - Days/Yr with Tmin < Historic 5th Percentile (", round(HistTminLow, 1), "?F) in ", Year, sep=""), 
        y = "Days/Yr") +
   scale_color_manual(name="",values = c("black","white"),guide=FALSE) +
   scale_fill_manual(name="",values = colors3)
@@ -366,7 +366,7 @@ ggplot(At, aes(x=CF,y=(eval(parse(text=var))),fill=CF)) +
   geom_bar(stat="identity",position="dodge",colour="black") +
   BarPlotTheme +
   # coord_cartesian(ylim=c(0, 40)) +
-  labs(title = paste(SiteID, " - Days/Yr with Tmax > Historic 95th Percentile (", round(HistTmaxHigh, 1), "°F) in ", Year, sep=""), 
+  labs(title = paste(SiteID, " - Days/Yr with Tmax > Historic 95th Percentile (", round(HistTmaxHigh, 1), "?F) in ", Year, sep=""), 
        y = "Days/Yr", colour = "Climate Future")  +
   scale_fill_manual(name="",values = colors3) +
   coord_cartesian(ylim = c(min(eval(parse(text=paste("At$",var,sep="")))), max(eval(parse(text=paste("At$",var,sep=""))))))
@@ -378,7 +378,7 @@ p<-ggplot(Annual_samp, aes(x=CF, y=(eval(parse(text=var))), colour=CF)) +
   geom_boxplot(colour="black",aes(fill = factor(CF)), outlier.shape=NA)+ 
   geom_jitter(shape = 21, size = 5, aes(fill = factor(CF),colour=factor(me.col)), position=position_jitter(0.2)) +
   BarPlotTheme +
-  labs(title = paste(SiteID, " - Days/Yr with Tmax > Historic 95th Percentile (", round(HistTmaxHigh, 1), "°F) in ", Year, sep=""), 
+  labs(title = paste(SiteID, " - Days/Yr with Tmax > Historic 95th Percentile (", round(HistTmaxHigh, 1), "?F) in ", Year, sep=""), 
        y = "Days/Yr") +
   scale_color_manual(name="",values = c("black","white"),guide=FALSE) +
   scale_fill_manual(name="",values = colors3)
