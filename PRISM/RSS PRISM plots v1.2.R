@@ -21,13 +21,13 @@ library(reshape2)
 
 rm(list=ls())
     #  Load data file ONLY if not following previous script
-RDataFile <- "FIIS_40.69182965_-72.99435226_PRISM_PptTminTmax_IntermediateFiles.RData"
+RDataFile <- "TUMA_31.572832_-111.047763_PRISM_PptTminTmax_IntermediateFiles.RData"
 #################################################
 # DataDir = location of .RData file
 # OFDir   = location where output (plots) files will be written. End with /
 
-WinDataDir <- "~/RSS/Working/FIIS/PRISM"
-WinOFDir <- "~/RSS/Working/FIIS/PRISM"
+WinDataDir <- "C:/Users/adillon/Documents/RSS/TUMA/PRISM"
+WinOFDir <- "C:/Users/adillon/Documents/RSS/TUMA/PRISM"
 
 # MacDataDir <- "/Volumes/Seagate1_Blue2TB/CHOH RSS/Figs PRISM/"
 # MacOFDir <-  "/Volumes/Seagate1_Blue2TB/CHOH RSS/Figs PRISM/"
