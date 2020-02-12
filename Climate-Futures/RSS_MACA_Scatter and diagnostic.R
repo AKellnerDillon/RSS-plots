@@ -17,8 +17,8 @@ library(WriteXLS)
 
 rm(list=ls())
 
-setwd("C:/Users/achildress/Documents/RSS/Working/ACAD/MACA/Figs MACA/")
-load("ACAD_44.35073_-68.2441_Final_Environment.RData")
+setwd("C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA")
+load("TUMA_31.572832_-111.047763_Final_Environment.RData")
 
 ######### INITIALS #########
 
