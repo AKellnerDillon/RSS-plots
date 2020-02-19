@@ -20,11 +20,11 @@ rm(list=ls())
 SiteID = "TUMA"
 
 #Directory and RData file where daily data series is stored
-<<<<<<< HEAD
+
 DataDir = "C:/Users/adillon/Documents/RSS/TUMA/MACA"
-=======
-DataDir = "C:/Users/achildress/Downloads"
->>>>>>> 04ee00315cb688cd7b6ea878eb5ddd85e0553678
+
+#DataDir = "C:/Users/achildress/Downloads"
+
 DataFile = "TUMA_init_parsed.RData"
 
 #Year range for summarizing future climate (Year - Range/2) to (Year + Range/2)
