@@ -24,11 +24,9 @@ library(reshape2)
 library(openxlsx)
 
 rm(list=ls())
-<<<<<<< HEAD
+
 setwd("C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA")
-=======
-setwd("C:/Users/achildress/Downloads/Figs MACA/")
->>>>>>> 04ee00315cb688cd7b6ea878eb5ddd85e0553678
+
 load("TUMA_31.572832_-111.047763_Final_Environment.RData")
 
 
