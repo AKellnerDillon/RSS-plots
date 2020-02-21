@@ -4,7 +4,7 @@ library(zoo)
 library(gridExtra)
 library(grid)
 
-setwd("~/RSS/Completed/PETE/")
+setwd("~/Documents/RSS/TUMA/")
 
 load("PRISM/PETE_37.19106_-77.476_PRISM_PptTminTmax_IntermediateFiles.RData")
 load("MACA/Figs MACA/PETE_37.19106_-77.476_Final_Environment.RData")
