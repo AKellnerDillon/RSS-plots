@@ -15,13 +15,13 @@ library(SPEI) # Make sure to install this pkg!
 
 ################################ USER INPUTS #################################################
 rm(list=ls())
-setwd("C:/Users/achildress/Documents/RSS/Working/SCBL/")
+setwd("C:/Users/adillon/Documents/RSS/TUMA/")
 
 # Load input data
-load("MACA/Figs MACA/SCBL_41.83476_-103.707_Final_Environment.RData")
+load("MACA/Figs MACA/TUMA_31.572832_-111.047763_Final_Environment.RData")
 rm(list=setdiff(ls(), c("ALL_HIST","ALL_FUTURE","CF_GCM","Lat","SiteID")))
 
-GCMs = c("MRI-CGCM3.rcp85","MIROC5.rcp45")
+GCMs = c("IPSL-CM5A-MR.rcp85","MRI-CGCM3.rcp45")
 CFs<- c("Warm Wet", "Hot Dry")
 Gridmet<-read.csv("Gridmet/GridMet.csv",header=T)
 
@@ -37,8 +37,8 @@ colors2<- c("#9A9EE5","#E10720")  # WarmWet/HotDry
 colors3<-c("white",colors2)
 
 # Set wd for saving plots
-OutDir<-("C:/Users/achildress/Documents/RSS/Working/SCBL/Drought")
-setwd(OutDir)
+setwd("C:/Users/achildress/Documents/RSS/TUMA/Drought")
+
 ################################ END USER INPUTS #############################################
 
 ############################### FORMAT DATAFRAMES  ############################################
@@ -205,7 +205,7 @@ ggplot(data = grid.append, aes(x=as.numeric(as.character(Year)), y=SPEI,fill = c
   geom_bar(stat="identity",aes(fill=col),col="black") +
     geom_hline(yintercept=-.5,linetype=2,colour="black",size=1) +
   scale_fill_manual(name="",values =c("blue","red")) +
-  labs(title = paste("SPEI values for", CFs[2], "(Gridmet + MACA", sep = " " ), 
+  labs(title = paste("SPEI values for", CFs[2], "(Gridmet + MACA)", sep = " " ), 
        x = "Date", y = "SPEI") +
   guides(color=guide_legend(override.aes = list(size=7))) + PlotTheme
 ggsave(paste(CFs[2], "Drought+Gridmet.png",sep=" "), width = 18, height = 9)
