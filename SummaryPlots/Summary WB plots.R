@@ -2,20 +2,21 @@
 # Plot
 
 rm(list=ls())
+
 library("WaterBalance")
 library(ggplot2)
 library(plyr)
 library(lubridate)
 library(dplyr)
 
-setwd("~/RSS/Working/SCBL/")
+setwd("C:/Users/adillon/Documents/RSS/TUMA")
 
-load("MACA/Figs MACA/SCBL_41.83476_-103.707_Final_Environment.RData")
+load('C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA/TUMA_31.572832_-111.047763_Final_Environment.RData')
 PARK<-SiteID
 ALL_FUTURE<-merge(ALL_FUTURE,CF_GCM,by="GCM")
 rm(list=setdiff(ls(), c("ALL_FUTURE","PARK","CF_GCM")))
 
-load("PRISM/SCBL_41.83476_-103.707_PRISM_PptTminTmax_IntermediateFiles.RData")
+load("PRISM/TUMA_31.572832_-111.047763_PRISM_PptTminTmax_IntermediateFiles.RData")
 grid<-read.csv("Gridmet/GridMET.csv",header=T)
 
 BC.min = 1979 #Bias correction range
@@ -26,7 +27,7 @@ col<- c("darkgray","#9A9EE5","#E10720")  # WarmWet/HotDry
 # col<- c("darkgray","#F3D3CB","#12045C")  # HotWet/WarmDry
 
 #Site characteristics 
-Sites = read.csv("C:/Users/achildress/Documents/RSS/Working/SCBL/WB/Model/SCBL_site_parameters.csv") #CSV file containing properties for all sites
+Sites = read.csv("C:/Users/adillon/Documents/RSS/TUMA/WaterBalance/TUMA_site_characteristics.csv") #CSV file containing properties for all sites
 n<-nrow(Sites)
 #Threshold temperature (deg C) for growing degree-days calculation
 T.Base = 0 
