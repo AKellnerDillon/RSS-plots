@@ -1,6 +1,8 @@
 ####### Batch water balance code #######
 # Update from Amanda batch code - to bring work from climate data 
+
 rm(list=ls())
+
 library("WaterBalance")
 library(ggplot2)
 library(plyr)
@@ -10,13 +12,13 @@ library(dplyr)
 ############################################################# USER INPUTS ##################################################################### 
 
 #Formatted input data as a daily time series. Needs to include the following columns: Date, ppt_mm, tmax_C, tmin_C, and tmean_C (temp.'s in deg. Celsius)
-setwd("C:/Users/achildress/Documents/RSS/Working/SCBL/MACA/Figs MACA/")
-load("SCBL_41.83476_-103.707_Final_Environment.RData") # Load final environment
+setwd("C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA")
+load("TUMA_31.572832_-111.047763_Final_Environment.RData") # Load final environment
 PARK<-SiteID
 rm(list=setdiff(ls(), c("ALL_HIST","ALL_FUTURE","PARK","CF_GCM")))
 
 #Site characteristics 
-Sites = read.csv("C:/Users/achildress/Documents/RSS/Working/SCBL/WB/SCBL_site_parameters.csv") #CSV file containing properties for all sites
+Sites = read.csv("C:/Users/adillon/Documents/RSS/TUMA/WaterBalance/TUMA_site_characteristics.csv") #CSV file containing properties for all sites
 n<-nrow(Sites)
 #Threshold temperature (deg C) for growing degree-days calculation
 T.Base = 0 
@@ -28,11 +30,16 @@ Method = "Hamon"  #Hamon is default method for daily PRISM and MACA data (contai
 DateFormat = "%m/%d/%Y"
 
 #Output directory
-OutDir = "~/RSS/Working/SCBL/WB"
+OutDir = "C:/Users/adillon/Documents/RSS/TUMA/WaterBalance"
+
+#Biome plot inputs
+biome<-read.csv("C:/Users/adillon/Documents/RSS/D_AET_points.csv",header=T)
+head(biome)
 
 #Select GCMs - Include RCP
 unique(ALL_FUTURE$GCM)
-GCMs = c("MRI-CGCM3.rcp85","MIROC5.rcp45")  
+GCMs = c("IPSL-CM5A-MR.rcp85","MRI-CGCM3.rcp45")
+CFs = c("Warm Wet","Hot Dry")
 
 colors2<- c("#9A9EE5","#E10720")  # WarmWet/HotDry
 # colors2<- c("#F3D3CB","#12045C")  # HotWet/WarmDry
@@ -239,8 +246,7 @@ ggsave(paste(PARK,"-SOIL_in_density_panel.png",sep=""), width = 15, height = 9)
 
 ########################
 # biome plots
-biome<-read.csv("C:/Users/achildress/Documents/RSS/Background/Biome_plots/D_AET_points.csv",header=T)
-head(biome)
+
 color<-as.character(unique(biome$color,ordered=T))
 
 color<-setNames(as.character(unique(biome$color)),as.character(unique(biome$biome)))
