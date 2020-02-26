@@ -4,17 +4,17 @@ library(zoo)
 library(gridExtra)
 library(grid)
 
-setwd("~/Documents/RSS/TUMA/")
+setwd("C:/Users/adillon/Documents/RSS/TUMA")
 
-load("PRISM/PETE_37.19106_-77.476_PRISM_PptTminTmax_IntermediateFiles.RData")
-load("MACA/Figs MACA/PETE_37.19106_-77.476_Final_Environment.RData")
+load("C:/Users/adillon/Documents/RSS/TUMA/PRISM/TUMA_31.572832_-111.047763_PRISM_PptTminTmax_IntermediateFiles.RData")
+load("C:/Users/adillon/Documents/RSS/TUMA/MACA/Figs MACA/TUMA_31.572832_-111.047763_Final_Environment.RData")
 Future_all<-merge(ALL_FUTURE,CF_GCM,by="GCM")
-grid<-read.csv("Gridmet/GridMet.csv",header=T)
+grid<-read.csv("C:/Users/adillon/Documents/RSS/TUMA/Gridmet/GridMet.csv",header=T)
 
 BC.min = 1979 #Bias correction range
 BC.max = 2017
 
-CF.sub = c("Historical", "Warm Damp", "Hot Wet") #CFs using
+CF.sub = c("Historical", "Warm Wet", "Hot Dry") #CFs using
 # col<- c("darkgray","#9A9EE5","#E10720")  # WarmWet/HotDry
 # col<- c("darkgray","#F3D3CB","#12045C")  # HotWet/WarmDry
 col<- c("darkgray","light green","orange")  # HotWet/WarmDry
