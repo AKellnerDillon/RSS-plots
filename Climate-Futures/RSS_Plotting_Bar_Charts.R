@@ -120,6 +120,13 @@ Annual_samp$CF<-factor(Annual_samp$CF,levels=c("Historical",Scenario1, Scenario2
 Annual_samp$me.col<-"b"
 Annual_samp$me.col[which(Annual_samp$CF=="Hot Wet")]<-"w" #If not using HW, will get error
 
+# For presentation
+ww <- subset(Monthly_delta, CF=="Warm Wet")
+hd <- subset(Monthly_delta, CF=="Hot Dry")
+mean(ww$TavgCustom)
+mean(hd$TavgCustom)
+
+
 
 ############################################################### Begin output plots ############################################
 

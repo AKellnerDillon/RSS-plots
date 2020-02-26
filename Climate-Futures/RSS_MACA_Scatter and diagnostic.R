@@ -115,7 +115,7 @@ ggplot(FM, aes(DeltaTavg, DeltaPr*365, xmin=Tavg25, xmax=Tavg75, ymin=Pr25*365, 
 ggsave(paste(SiteID, "Scatter BY SCENARIO-",x,"--",y,".png",sep=""), width = 15, height = 9)
 
 #~~~~~~~~~~~~~~
-# Presetation only scatterplots
+# Presentation only scatterplots
 #~~~~~~~~~~~~~~
 # Points only w/out
 dualscatter = ggplot(Future_Means, aes(DeltaTavg, DeltaPr*365, xmin=Tavg25, xmax=Tavg75, ymin=Pr25*365, ymax=Pr75*365))

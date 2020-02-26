@@ -37,7 +37,7 @@ colors2<- c("#9A9EE5","#E10720")  # WarmWet/HotDry
 colors3<-c("white",colors2)
 
 # Set wd for saving plots
-setwd("C:/Users/achildress/Documents/RSS/TUMA/Drought")
+setwd("C:/Users/adillon/Documents/RSS/TUMA/Drought")
 
 ################################ END USER INPUTS #############################################
 
