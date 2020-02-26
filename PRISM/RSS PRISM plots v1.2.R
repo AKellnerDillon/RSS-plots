@@ -104,6 +104,17 @@ tminAvg = with(baseData, tapply(tmin, yr, mean))
 tmaxAvg = with(baseData, tapply(tmax, yr, mean))
 tmeanAvg = with(baseData, tapply(tmean, yr, mean))
 
+# For Presentation
+
+dbmax <- tmaxAvg[36:46] # subset years of dust bowl
+mean(dbmax)
+mean(tmaxAvg)
+
+dbmin <- tminAvg[36:46]
+mean(dbmin)
+mean(tminAvg)
+
+
 cYr <- BeginYr:EndYr
 yrAvgs <- data.frame(cYr, pptAvg, tminAvg, tmaxAvg, tmeanAvg)
 yrAvgs$tAvg <- (yrAvgs$tminAvg+yrAvgs$tmaxAvg)/2
